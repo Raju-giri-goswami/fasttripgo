@@ -1,4 +1,5 @@
 {
+  "homepage": "https://raju-giri-goswami.github.io/fasttripgo",
   "name": "fast-trip-go",
   "private": true,
   "version": "0.1.0",
@@ -6,9 +7,10 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "deploy": "tsc && vite build && node sharedHostingDeploy.js",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.2",

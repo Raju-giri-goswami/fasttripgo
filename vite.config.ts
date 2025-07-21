@@ -7,7 +7,7 @@ const isProd = process.env.NODE_ENV === 'production';
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/',
+  base: '/fasttripgo/', // Set base path for GitHub Pages',
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
