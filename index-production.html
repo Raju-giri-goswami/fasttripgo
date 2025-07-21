@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- Security Meta Tags -->
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+  <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
+  
+  <meta name="description" content="Fast Trip Go - Your ultimate destination for premium travel packages across India and beyond. Explore our curated packages for Uttarakhand, Manali, Nepal, Ladakh, and more." />
+  <meta name="keywords" content="travel packages, India tours, Uttarakhand tours, Manali packages, Nepal tours, Ladakh trips, travel agency" />
+  <meta name="author" content="Fast Trip Go" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="Fast Trip Go | Premium Travel Packages" />
+  <meta property="og:description" content="Discover India's most beautiful destinations with Fast Trip Go. We offer premium travel packages for Uttarakhand, Manali, Nepal, Ladakh, and more." />
+  <meta property="og:image" content="https://fasttripgo.com/og-image.jpg" />
+  <meta property="og:url" content="https://fasttripgo.com" />
+  <title>Fast Trip Go | Premium Travel Packages</title>
+  
+  <!-- Error tracking -->
+  <script type="text/javascript">
+    window.addEventListener('error', function(e) {
+      console.error('Global error caught:', e.message, e.filename, e.lineno);
+      const errorDisplay = document.getElementById('error-display');
+      if (errorDisplay) {
+        errorDisplay.style.display = 'block';
+        errorDisplay.innerHTML += `<p>Error: ${e.message}</p>`;
+      }
+    });
+    
+    // Check for JS execution
+    window.jsExecuted = true;
+    
+    // Set global base URL for assets
+    window.BASE_URL = location.origin + location.pathname.substring(0, location.pathname.lastIndexOf('/') + 1);
+  </script>
+</head>
+<body>
+  <div id="root"></div>
+  
+  <!-- Error display for debugging -->
+  <div id="error-display" style="display:none; position:fixed; bottom:0; left:0; right:0; background:rgba(255,0,0,0.8); color:white; padding:10px; z-index:9999; font-family:monospace; white-space:pre-wrap;"></div>
+  
+  <!-- Detect issues -->
+  <script type="text/javascript">
+    // Check if JavaScript is running
+    if (!window.jsExecuted) {
+      document.getElementById('error-display').style.display = 'block';
+      document.getElementById('error-display').innerHTML += '<p>JavaScript execution failed</p>';
+    }
+    
+    // Log environment info
+    console.log('URL:', window.location.href);
+    console.log('Base URL:', window.BASE_URL);
+    console.log('User Agent:', navigator.userAgent);
+    
+    // Inject module fix for older servers
+    if (typeof navigator.userAgentData === 'undefined') {
+      // Add legacy support
+      const legacyScript = document.createElement('script');
+      legacyScript.src = './assets/js/es-module-shims.js';
+      legacyScript.async = true;
+      document.head.appendChild(legacyScript);
+    }
+  </script>
+  
+  <script type="module" src="./assets/js/main.js"></script>
+</body>
+</html>
