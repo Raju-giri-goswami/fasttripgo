@@ -1,0 +1,143 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-white text-gray-800 font-sans antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold leading-tight;
+  }
+  
+  h1 {
+    @apply text-4xl md:text-5xl;
+  }
+  
+  h2 {
+    @apply text-3xl md:text-4xl;
+  }
+  
+  h3 {
+    @apply text-2xl md:text-3xl;
+  }
+  
+  h4 {
+    @apply text-xl md:text-2xl;
+  }
+  
+  h5 {
+    @apply text-lg md:text-xl;
+  }
+  
+  h6 {
+    @apply text-base md:text-lg;
+  }
+  
+  p {
+    @apply leading-relaxed;
+  }
+}
+
+@layer components {
+  .container {
+    @apply px-4 mx-auto max-w-7xl;
+  }
+  
+  .btn {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-lg font-medium transition-all duration-200;
+  }
+  
+  .btn-primary {
+    @apply bg-primary-500 text-white hover:bg-primary-600;
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary-500 text-white hover:bg-secondary-600;
+  }
+  
+  .btn-accent {
+    @apply bg-accent-500 text-white hover:bg-accent-600;
+  }
+  
+  .btn-outline {
+    @apply border-2 border-primary-500 text-primary-500 hover:bg-primary-50;
+  }
+  
+  .card {
+    @apply bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300;
+  }
+  
+  .card-hover {
+    @apply hover:shadow-lg hover:-translate-y-1;
+  }
+  
+  .section {
+    @apply py-12 md:py-16 lg:py-20;
+  }
+  
+  .section-title {
+    @apply text-3xl font-bold mb-6 md:mb-8 text-center;
+  }
+  
+  .section-subtitle {
+    @apply text-lg text-gray-600 mb-10 max-w-3xl mx-auto text-center;
+  }
+}
+
+/* Sticky contact buttons */
+.sticky-contact {
+  @apply fixed right-4 bottom-4 z-50 flex flex-col gap-2;
+}
+
+/* Animations */
+.animate-on-scroll {
+  @apply opacity-0 translate-y-8 transition-all duration-700;
+}
+
+.animate-on-scroll.is-visible {
+  @apply opacity-100 translate-y-0;
+}
+
+/* Package search */
+.search-container {
+  @apply relative z-10 w-full max-w-4xl mx-auto px-4 -mt-8 md:-mt-16;
+}
+
+.search-box {
+  @apply bg-white rounded-xl shadow-lg p-4 md:p-6;
+}
+
+@layer utilities {
+  .text-shadow-sm {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+  }
+  
+  .text-shadow-md {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.35);
+  }
+  
+  .text-shadow-lg {
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.45),
+                 0 8px 16px rgba(0, 0, 0, 0.3);
+  }
+
+  .text-shadow-xl {
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.55),
+                 0 12px 24px rgba(0, 0, 0, 0.4);
+  }
+  
+  /* Hero form focus styles */
+  .hero-form-input {
+    @apply transition-all duration-200;
+  }
+  
+  .hero-form-input:focus {
+    @apply ring-2 ring-primary-500 border-primary-500 ring-opacity-50;
+  }
+}
